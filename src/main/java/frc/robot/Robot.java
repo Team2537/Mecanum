@@ -133,14 +133,21 @@ public class Robot extends TimedRobot {
       SmartDashboard.putString("Direction", "DriveForward");
       mDrive.drivePolar(0.3, 0, 0);
     } else {
-      double xSpeed = -0.5 * xbox.getY(Hand.kLeft);
-      double ySpeed = -0.5 * xbox.getX(Hand.kLeft);
-      double zRotation = -0.5 * xbox.getX(Hand.kRight);
+      double xSpeed = -0.3 * xbox.getX(Hand.kRight);
+     double ySpeed = -0.3 * xbox.getY(Hand.kRight); 
+     double zRotation = -0.3 * xbox.getY(Hand.kLeft);
       mDrive.driveCartesian(ySpeed, xSpeed, zRotation);
+  } /*
+    if (xbox.getAButtonPressed()%) { //drive right front forward
+      mDrive.drivePolar(0, 0, 0); */
     }
-    if (xbox.getAButtonPressed()) { //drive right front forward
-      mDrive.drivePolar(0, 0, 0);
-     
+  
+     /* leftjoystick turns right
+     rightjoystick - 
+     left (-x) is backward
+     right (+x) is forward
+    up and down (y) turns
+
     }
 
     /*if (xbox.getYButtonPressed()) { // drive left front forward
@@ -163,7 +170,7 @@ public class Robot extends TimedRobot {
       rearLeft.set(0);
       rearRight.set(0);    
     }*/
-  }
+
 
   /**
    * This function is called periodically during test mode.
